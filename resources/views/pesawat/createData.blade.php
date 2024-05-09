@@ -85,7 +85,7 @@
                                 <div class="form-group">
                                     <label for="callsign">Call Sign :</label>
                                     <input style="border-style: groove; border-color:black" type="text"
-                                        class="form-control" id="callsign" name="callsign">
+                                        class="form-control" id="call_sign" name="call_sign">
                                 </div>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
                                 <div class="form-group">
                                     <label for="tipepesawat">Tipe Pesawat :</label>
                                     <input style="border-style: groove; border-color:black" type="text"
-                                        class="form-control" id="tipepesawat" name="tipepesawat">
+                                        class="form-control" id="tipe_pesawat" name="tipe_pesawat">
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -165,9 +165,9 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="lokasi2">Lokasi :</label>
+                                    <label for="lokasi">Lokasi :</label>
                                     <input style="border-style: groove; border-color:black" type="text"
-                                        class="form-control" id="lokasi2" name="lokasi2">
+                                        class="form-control" id="lokasi" name="lokasi">
                                 </div>
                             </div>
                         </div>
@@ -345,15 +345,15 @@
                         <hr style="border: 1px solid">
                         <div class="row">
                             <div class="col-md-4">
-                                <input type="radio" name="petugas" id="team" value="Team Leader">
+                                <input type="radio" name="onduty" id="team" value="Team Leader">
                                 <label for="team">Team Leader</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="radio" name="petugas" id="squad" value="Squad Leader" >
+                                <input type="radio" name="onduty" id="squad" value="Squad Leader" >
                                 <label for="squad">Squad Leader</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="radio" name="petugas" id="officer" value="Officer" >
+                                <input type="radio" name="onduty" id="officer" value="Officer" >
                                 <label for="officer">Officer</label>
                             </div>
                         </div>

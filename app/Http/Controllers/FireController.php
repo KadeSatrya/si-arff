@@ -106,11 +106,6 @@ class FireController extends Controller
             foreach ($datasetMove as $key => $value) {
                 $restructuredDatasetMove[$key] = $value[$x];
             }
-            //dd($restructuredDatasetMove);
-
-
-
-    
             $dataMove = DataMove::create($restructuredDatasetMove);
         }
 

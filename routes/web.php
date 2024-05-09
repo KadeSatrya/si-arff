@@ -20,7 +20,7 @@ Route::get('/', function () { return view('index'); });
 
 //kecelakaan pesawat
 Route::resource('kecelakaan-pesawat', IncidentController::class);
-Route::post('kecelakaan-pesawat/create', function () { return view('pesawat/createData'); })->name('aircraft.create');
+Route::post('kecelakaan-pesawat/create', [IncidentController::class, 'store' ])->name('aircraft.create');
 Route::get('kecelakaan-pesawat/detail/{id}', [IncidentController::class, 'show'])->name('aircraft.show');
 
 //domestic fire

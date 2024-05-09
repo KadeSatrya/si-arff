@@ -54,9 +54,9 @@
                                             @foreach ($data_logs as $data)
                                             <tr>
                                                 <td>{{ $data->tanggal }}</td>
-                                                <td>{{ $data->DataIncident->maskapai }}</td>
-                                                <td>{{ $data->DataIncident->tipe_pesawat }}</td>
-                                                <td>{{ $data->DataIncident->call_sign }}</td>
+                                                <td>{{ $data->maskapai }}</td>
+                                                <td>{{ $data->tipe_pesawat }}</td>
+                                                <td>{{ $data->call_sign }}</td>
                                                 <td> <a class="btn btn-info"
                                                     href="{{ route('aircraft.show', $data->idlog) }}">Show</a>
                                                 </td>
