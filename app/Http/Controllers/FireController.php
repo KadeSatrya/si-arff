@@ -82,24 +82,6 @@ class FireController extends Controller
             'bergerak', 'tiba_tkp', 'control_time', 'rescue_time', 'extinguish_time', 'kembali_fs', 'stop_time', 'sebelum', 'sesudah',
         ]);
 
-        //Restructure array
-        /*$restructuredDatasetMove = [];
-        for ($x = 0; $x < count($datasetMove['bergerak']); $x++){
-            $restructuredDatasetMove[$x] = [
-                $datasetMove['bergerak'][$x],
-                $datasetMove['tiba_tkp'][$x],
-                $datasetMove['control_time'][$x],
-                $datasetMove['rescue_time'][$x],
-                $datasetMove['extinguish_time'][$x],
-                $datasetMove['kembali_fs'][$x],
-                $datasetMove['stop_time'][$x],
-                $datasetMove['sebelum'][$x],
-                $datasetMove['sesudah'][$x],
-                $logId
-            ];
-        }*/
-
-
         // Create a new data move record
         for ($x = 0; $x < count($datasetMove['bergerak']); $x++) {
             $restructuredDatasetMove = ['data_logs_id' => $logId];
