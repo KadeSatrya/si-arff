@@ -1,0 +1,26 @@
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('sumber2').addEventListener('change', function() {
+      var sumber2 = this.value;
+      var textfield1 = document.getElementById('maskapai2');
+      var textfield2 = document.getElementById('callsign2');
+      var textfield3 = document.getElementById('lokasi2');
+      var textfield4 = document.getElementById('eta2');
+      // var textfield5 = document.getElementById('lokasi3');
+      var textArea1 = document.getElementById('lokasi3');
+
+      if (sumber2 === 'Di Pesawat') {
+          textfield1.disabled = false;
+          textfield2.disabled = false;
+          textfield3.disabled = false;
+          textfield4.disabled = false;
+          textArea1.disabled = true;
+      } else {
+          textfield1.disabled = true;
+          textfield2.disabled = true;
+          textfield3.disabled = true;
+          textfield4.disabled = true;
+          textArea1.disabled = false;
+      }
+  });
+});

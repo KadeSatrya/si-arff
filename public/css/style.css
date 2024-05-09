@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    
+}
+.search{
+  
+  top:6px;
+  left:10px;
+}
+
+.green{
+    
+    color:green;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+}
