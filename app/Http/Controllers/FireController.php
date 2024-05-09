@@ -78,24 +78,55 @@ class FireController extends Controller
         // Save the data medic record
         $dataMedic->save();
 
-        dd($request->only([
+        $datasetMove = $request->only([
             'bergerak', 'tiba_tkp', 'control_time', 'rescue_time', 'extinguish_time', 'kembali_fs', 'stop_time', 'sebelum', 'sesudah',
-        ]));
+        ]);
+
+        //Restructure array
+        /*$restructuredDatasetMove = [];
+        for ($x = 0; $x < count($datasetMove['bergerak']); $x++){
+            $restructuredDatasetMove[$x] = [
+                $datasetMove['bergerak'][$x],
+                $datasetMove['tiba_tkp'][$x],
+                $datasetMove['control_time'][$x],
+                $datasetMove['rescue_time'][$x],
+                $datasetMove['extinguish_time'][$x],
+                $datasetMove['kembali_fs'][$x],
+                $datasetMove['stop_time'][$x],
+                $datasetMove['sebelum'][$x],
+                $datasetMove['sesudah'][$x],
+                $logId
+            ];
+        }*/
+
+
         // Create a new data move record
-        $dataMove = DataMove::create($request->only([
-            'bergerak', 'tiba_tkp', 'control_time', 'rescue_time', 'extinguish_time', 'kembali_fs', 'stop_time', 'sebelum', 'sesudah',
-        ]));
+        for ($x = 0; $x < count($datasetMove['bergerak']); $x++) {
+            $restructuredDatasetMove = ['data_logs_id' => $logId];
+            foreach ($datasetMove as $key => $value) {
+                $restructuredDatasetMove[$key] = $value[$x];
+            }
+            //dd($restructuredDatasetMove);
+
+
+
+    
+            $dataMove = DataMove::create($restructuredDatasetMove);
+        }
+
+
 
         // Set the data_logs_id property of the data move record
+
         $dataMove->data_logs_id = $logId;
 
         // Save the data move record
         $dataMove->save();
 
         // Associate the data incident and data move records with the data log record
-        $dataLog->data_Fire()->associate($dataFire);
-        $dataLog->data_medic()->associate($dataMedic);
-        $dataLog->data_move()->associate($dataMove);
+        //$dataLog->dataFire()->associate($dataFire);
+        //$dataLog->dataMedic()->associate($dataMedic);
+        //$dataLog->dataMove()->associate($dataMove);
         $dataLog->save();
 
         // Redirect to the data log index page
