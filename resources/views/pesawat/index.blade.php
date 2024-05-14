@@ -23,10 +23,9 @@
                             </div>
                             <div class="mb-2 d-flex justify-content-between align-items-center">
 
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-success " data-toggle="modal" data-target="#level" style="margin-left: 10px; margin-top:5px">
-                                    +
-                                </button>
+                            <div class="px-2">
+                                <a class="btn btn-success" href="/kecelakaan-pesawat/create" style="margin-top: 5px">+</a>
+                            </div>
 
                             </div>
                             <div class="card-body">
@@ -52,6 +51,7 @@
                                         </tfoot>
                                         <tbody>
                                             @foreach ($data_logs as $data)
+                                            @if($data->DataIncident != null)
                                             <tr>
                                                 <td>{{ $data->tanggal }}</td>
                                                 <td>{{ $data->DataIncident->maskapai }}</td>
@@ -61,6 +61,7 @@
                                                     href="{{ route('aircraft.show', $data->idlog) }}">Show</a>
                                                 </td>
                                             </tr>
+                                            @endif
                                             @endforeach
                                         </tbody>
                                     </table>

@@ -51,15 +51,14 @@ class FireController extends Controller
             'utc', 'waktu', 'tanggal', 'nama', 'penelpon', 'no_telp', 'onduty', 'catatan',
         ]));
         
-        //EDIT1: Ganti jadi ambil id dari datalog
         $dataLog->save();
         $logId = $dataLog->idlog;
 
         // Create a new data fire record
         $dataFire = DataFire::create([
             'sumber'=>request('sumber'), 'lokasi'=>request('lokasi'), 'keterangan'=>request('keterangan'), 'data_logs_id' => $logId
-        ]); //EDIT2: ganti idlogs jadi data_logs_id, reformat array
-
+        ]);
+        
         // Set the data_logs_id property of the data incident record
         $dataFire->data_logs_id = $logId;
 
@@ -69,7 +68,7 @@ class FireController extends Controller
         // Create a new data medic record
         $dataMedic = DataMedic::create($request->only([
             'sumber2', 'maskapai2', 'call_sign2', 'runway', 'jenis_kerusakan', 'eta', 'pob', 'fuel', 'barang_berbahaya',
-            'lokasi', 'kondisi', 'jenis_kelamin', 'kesadaran', 'bernafas', 'telepon', 'telepon_ambulan', //EDIT3: Tambah ini
+            'lokasi', 'kondisi', 'jenis_kelamin', 'kesadaran', 'bernafas', 'telepon', 'telepon_ambulan', 
         ]) + ['data_logs_id' => $logId]);
 
         // Set the data_logs_id property of the data medic record

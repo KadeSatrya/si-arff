@@ -73,6 +73,15 @@
                         <h3>Kecelakaan Pesawat</h3>
                         <hr style="border: 1px solid">
                         <input type="hidden" name="idincident" id="idincident">
+                        <div class="form-group">
+                            <label for="level_siaga">Level Siaga :</label>
+                            <select style="border-style: groove; border-color:black" class="form-control" id="level_siaga"
+                                name="level_siaga">
+                                <option value="1">1: Local Standby</option>
+                                <option value="2">2: Full Emergency</option>
+                                <option value="3">3: Aircraft Accident</option>
+                            </select>
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">

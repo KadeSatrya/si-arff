@@ -15,6 +15,7 @@ class DataIncident extends Model
     protected $connection = 'mysql';
 
     protected $fillable = [
+        'level_siaga',
         'maskapai', 
         'call_sign', 
         'tipe_pesawat', 

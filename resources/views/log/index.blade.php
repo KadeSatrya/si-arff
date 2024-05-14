@@ -48,6 +48,7 @@
                                         </tfoot>
                                         <tbody>
                                             @foreach ($logs as $data)
+                                            @if($data->DataFire != null)
                                             <tr>
                                                 <td>{{ ++$i }}</td>
                                                 <td>{{ $data->tanggal }}</td>
@@ -57,6 +58,7 @@
                                                     href="{{ route('domesticfire.show', $data->idlog) }}">Show</a>
                                                 </td>
                                             </tr>
+                                            @endif
                                             @endforeach
                                         </tbody>
                                     </table>

@@ -16,9 +16,9 @@ aria-hidden="true">
                 <div class="form-group">
                     <select style="border-style: groove" class="form-control" id="telepon_ambulan"
                         name="telepon_ambulan">
-                        <option value="1">1 Local Standby</option>
-                        <option value="2">2 Full Emergency</option>
-                        <option value="3">3 Aircraft Accident</option>
+                        <option value=1>1 Local Standby</option>
+                        <option value=2>2 Full Emergency</option>
+                        <option value=3>3 Aircraft Accident</option>
                     </select>
                 </div>
         </div>

@@ -38,13 +38,14 @@ class IncidentController extends Controller
     try{
     // Validate the form fields
     $request->validate([
+        'level_siaga' => 'required',
         'utc' => 'required',
         'waktu' => 'required',
         'tanggal' => 'required|date_format:Y-m-d',
         'nama' => 'required|string|max:255',
         'penelpon' => 'required|string|max:255',
         'no_telp' => 'required|string|max:255',
-        'onduty' => 'required|string|in:Team Leader,Squad Leader,Officers',
+        'onduty' => 'required|string|in:Team Leader,Squad Leader,Officer',
         'catatan' => 'nullable|string',
         'maskapai' => 'required|string|max:255',
         'call_sign' => 'required|string|max:255',
@@ -64,15 +65,11 @@ class IncidentController extends Controller
         'telepon_ambulan' => 'required|string|max:255',
     ]);}
     catch (Exception $e) {
-        // Handle validation failure
         $errors = $e->validator->errors()->toArray();
         
-        // Loop through each error to identify which validation rule failed
         foreach ($errors as $field => $messages) {
             foreach ($messages as $message) {
-                // $field contains the field name and $message contains the error message
-                // You can log or return these values as needed
-                // For example:
+
                 echo "Validation failed for field '$field': $message";
             }
         }
@@ -88,7 +85,7 @@ class IncidentController extends Controller
 
     // Create a new data incident record
     $dataIncident = DataIncident::create($request->only([
-        'maskapai', 'call_sign', 'tipe_pesawat', 'runway', 'jenis_kerusakan', 'eta', 'pob', 'fuel', 'barang_berbahaya',
+        'level_siaga', 'maskapai', 'call_sign', 'tipe_pesawat', 'runway', 'jenis_kerusakan', 'eta', 'pob', 'fuel', 'barang_berbahaya',
     ]) + ['data_logs_id' => $logId]);
 
     // Create a new data medic record
