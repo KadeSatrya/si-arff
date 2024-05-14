@@ -102,13 +102,17 @@ class IncidentController extends Controller
         'bergerak', 'tiba_tkp', 'control_time', 'rescue_time', 'extinguish_time', 'kembali_fs', 'stop_time', 'sebelum', 'sesudah',
     ]);
 
+    $nullExist = false;
     // Create a new data move record
     for ($x = 0; $x < count($datasetMove['bergerak']); $x++) {
         $restructuredDatasetMove = ['data_logs_id' => $logId];
         foreach ($datasetMove as $key => $value) {
+            if($value[$x] == null) $nullExist = true;
             $restructuredDatasetMove[$key] = $value[$x];
         }
+        if($nullExist) break;
         $dataMove = DataMove::create($restructuredDatasetMove);
+        $dataMove->save();
     }
 
     // Associate the data incident and data move records with the data log record
@@ -116,7 +120,6 @@ class IncidentController extends Controller
     //$dataLog->DataMedic()->associate($dataMedic);
     //$dataLog->DataMove()->associate($dataMove);
     $dataMedic->save();
-    $dataMove->save();
     $dataIncident->save();
     $dataLog->save();
 
