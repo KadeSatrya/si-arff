@@ -30,7 +30,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <table class="table table-bordered" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
                                                 <th scope="col" width="15%">Tanggal</th>
@@ -56,7 +56,7 @@
                                                 <td>{{ $data->tanggal }}</td>
                                                 <td>{{ $data->DataIncident->maskapai }}</td>
                                                 <td>{{ $data->DataIncident->tipe_pesawat }}</td>
-                                                <td>{{ $data->DataIncident->call_sign }}</td>
+                                                <td>{{ $data->DataIncident->level_siaga }}</td>
                                                 <td> <a class="btn btn-info"
                                                     href="{{ route('aircraft.show', $data->idlog) }}">Show</a>
                                                 </td>
@@ -65,15 +65,19 @@
                                             @endforeach
                                         </tbody>
                                     </table>
+                                    @if($data_logs != null)
+                                    <nav>
+                                        <ul class="pagination pagination-sm justify-content-center">
+                                            {{ $data_logs->links() }}
+                                        </ul>
+                                    </nav>
+                                    @endif
                                 </div>
                             </div>
                         </div>
                     </div>
 
                 </div>
-                <!-- /.container-fluid -->
-                @include('partials.level_siaga')
-
             </div>
             <!-- End of Main Content -->
 

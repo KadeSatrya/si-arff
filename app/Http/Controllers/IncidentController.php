@@ -16,7 +16,10 @@ class IncidentController extends Controller
      */
     public function index()
     {
-        $data_logs = DataLog::with(['dataIncident','dataMedic','dataMove'])->paginate(5);
+        $data_logs = DataLog::with(['dataIncident','dataMedic','dataMove'])
+        ->whereHas('dataIncident')
+        ->whereDoesntHave('dataFire')
+        ->simplePaginate(5);
     
         return view('pesawat.index', compact('data_logs'))
         ->with('i', (request()->input('page', 1) - 1) * 5);

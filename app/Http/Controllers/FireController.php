@@ -15,7 +15,10 @@ class FireController extends Controller
      */
     public function index()
     {
-        $logs = DataLog::with(['dataFire','dataMedic','dataMove'])->paginate(5);
+        $logs = DataLog::with(['dataFire','dataMedic','dataMove'])
+        ->whereHas('dataFire')
+        ->whereDoesntHave('dataIncident')
+        ->simplePaginate(5);
     
         return view('log.index', compact('logs'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -58,7 +61,7 @@ class FireController extends Controller
         $dataFire = DataFire::create([
             'sumber'=>request('sumber'), 'lokasi'=>request('lokasi'), 'keterangan'=>request('keterangan'), 'data_logs_id' => $logId
         ]);
-        
+
         // Set the data_logs_id property of the data incident record
         $dataFire->data_logs_id = $logId;
 

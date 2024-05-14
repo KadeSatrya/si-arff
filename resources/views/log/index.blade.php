@@ -26,7 +26,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table id="dataTable" class="table table-bordered" width="100%" cellspacing="0">
+                                    <table class="table table-bordered" width="100%" cellspacing="0">
 
                                         <thead>
                                             <tr class="bg-light">
@@ -62,7 +62,9 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-
+                                    <ul class="pagination pagination-sm justify-content-center">
+                                        {{ $logs->links() }}
+                                    </ul>
                                 </div>
                             </div>
                         </div>
