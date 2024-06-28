@@ -68,7 +68,7 @@
 
     <br>
     <div><h2>Petugas yang Bertanggung Jawab</h2></div>
-    <div>On Duty: {{$log->onduty}}</div>
+    <div><b>On Duty:</b> {{$log->onduty}}</div>
 
     <br>
     <div><h2>Catatan</h2></div>
