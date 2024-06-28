@@ -32,15 +32,15 @@ Route::get('domestic-fire/detail/{id}', [FireController::class, 'show'])->name('
 //regulasi
 Route::get('/regulation', function () { return view('page-regulasi'); });
 Route::get('/download-pdf-national-pr', function () {
-    $file_path = storage_path('files\PR 30 Tahun 2022_221228_134631.pdf');
+    $file_path = storage_path('files/PR 30 Tahun 2022_221228_134631.pdf');
     return response()->download($file_path);
 });
 Route::get('/download-pdf-international-9137', function () {
-    $file_path = storage_path('files\DOC 9137.pdf');
+    $file_path = storage_path('files/DOC 9137.pdf');
     return response()->download($file_path);
 });
 Route::get('/download-pdf-international-annex', function () {
-    $file_path = storage_path('files\annex-14-aerodromes.pdf');
+    $file_path = storage_path('files/annex-14-aerodromes.pdf');
     return response()->download($file_path);
 });
 //support
