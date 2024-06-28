@@ -18,7 +18,7 @@
                         <div class="row">
                             <div class="col">
                                 <strong>Level Siaga :</strong>
-                                <p>1</p>
+                                <p>{{ $data->$DataIncident->level_siaga }}</p>
                             </div>
                         </div>
                         <hr style="border:1px solid #000;">
@@ -26,15 +26,15 @@
                         <div class="row">
                             <div class="col">
                                 <Strong>Nama :</Strong>
-                                <p>Joko</p>
+                                <p>{{ $data->nama }}</p>
                             </div>
                             <div class="col">
                                 <Strong>Asal Telepon :</Strong>
-                                <p>Watchroom</p>
+                                <p>{{ $data->penelpon }}</p>
                             </div>
                             <div class="col">
                                 <Strong>No Telp :</Strong>
-                                <p>554</p>
+                                <p>{{ $data->$no_telp }}</p>
                             </div>
                         </div>
                         <hr style="border:1px solid #000;">
@@ -44,25 +44,25 @@
                             <div class="col-xs-12 col-sm-12 col-md-3">
                                 <div class="form-group">
                                     <Strong>Maskapai :</Strong>
-                                    <p>Garuda Indonesia</p>
+                                    <p>{{ $data->$DataIncident->maskapai }}</p>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-3">
                                 <div class="form-group">
                                     <Strong>Tipe Pesawat :</Strong>
-                                    <p>Boeing 747</p>
+                                    <p>{{ $data->$DataIncident->tipe_pesawat }}</p>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-3">
                                 <div class="form-group">
                                     <Strong>Callsign :</Strong>
-                                    <p>GRI747</p>
+                                    <p>{{ $data->$DataIncident->call_sign }}</p>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-3">
                                 <div class="form-group">
                                     <Strong>Runway :</Strong>
-                                    <p>09</p>
+                                    <p>{{ $data->$DataIncident->runway }}</p>
                                 </div>
                             </div>
                         </div>
@@ -70,28 +70,26 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <Strong>Jenis Kerusakan :</Strong>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis unde quo
-                                        maxime necessitatibus! Porro, laborum nihil eum, error quos cumque obcaecati ut
-                                        in molestiae distinctio dolore, sequi ab. Quidem quod labore iste, optio</p>
+                                    <p>{{ $data->$DataIncident->jenis_kerusakan }}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-3">
                                 <strong>E.T.A :</strong>
-                                <p>12</p>
+                                <p>{{ $data->$DataIncident->eta }}</p>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-3">
                                 <strong>P.O.B :</strong>
-                                <p>12</p>
+                                <p>{{ $data->$DataIncident->pob }}</p>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-3">
                                 <strong>Fuel :</strong>
-                                <p>5000 gallon</p>
+                                <p>{{ $data->$DataIncident->fuel }}</p>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-3">
                                 <strong>Barang-Barang Berbahaya :</strong>
-                                <p>none</p>
+                                <p>{{ $data->$DataIncident->barang_berbahaya }}</p>
                             </div>
                         </div>
                         <hr style="border:1px solid #000;">
@@ -101,33 +99,31 @@
                             <div class="col-xs-12 col-sm-12 col-md-3">
                                 <div class="form-group">
                                     <Strong>Maskapai :</Strong>
-                                    <p>Garuda Indonesia</p>
+                                    <p>{{ $data->$DataIncident->maskapai }}</p>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-3">
                                 <div class="form-group">
                                     <Strong>Callsign :</Strong>
-                                    <p>GIA 123</p>
+                                    <p>{{ $data->$DataIncident->call_sign }}</p>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-3">
                                 <div class="form-group">
                                     <Strong>Lokasi :</Strong>
-                                    <p>09</p>
+                                    <p>{{ $data->$DataIncident->lokasi }}</p>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-3">
                                 <strong>E.T.A :</strong>
-                                <p>12</p>
+                                <p>{{ $data->$DataIncident->eta }}</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <Strong>Kondisi pasien :</Strong>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis unde quo
-                                        maxime necessitatibus! Porro, laborum nihil eum, error quos cumque obcaecati ut
-                                        in molestiae distinctio dolore, sequi ab. Quidem quod labore iste, optio</p>
+                                    <p>{{ $data->$DataIncident->level_siaga }}</p>
                                 </div>
                             </div>
                         </div>

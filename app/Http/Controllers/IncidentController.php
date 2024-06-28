@@ -133,6 +133,8 @@ class IncidentController extends Controller
     public function show(string $id)
     {
         //
+        $data = DataLog::with(["dataIncident"])->find($id);
+        return view('pesawat.showData', compact("data"));
     }
 
     /**

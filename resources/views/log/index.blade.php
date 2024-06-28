@@ -55,7 +55,7 @@
                                                 <td>{{ $data->DataFire->sumber }}</td>
                                                 <td>{{ $data->DataFire->lokasi }}</td>
                                                 <td> <a class="btn btn-info"
-                                                    href="{{ route('domesticfire.show', $data->idlog) }}">Show</a>
+                                                    href="{{ route('pdf.fire', $data->idlog) }}">Show</a>
                                                 </td>
                                             </tr>
                                             @endif

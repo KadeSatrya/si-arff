@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FireController;
 use App\Http\Controllers\IncidentController;
+use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,3 +45,7 @@ Route::get('/download-pdf-international-annex', function () {
 });
 //support
 Route::get('/support', function () { return view('support/index'); });
+
+//pdf
+Route::get('/pdf-fire/{id}', [PdfController::class, 'generateFirePdf'])->name('pdf.fire');
+Route::get('/pdf-accident/{id}', [PdfController::class, 'generateAccidentPdf'])->name('pdf.accident');

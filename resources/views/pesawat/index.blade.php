@@ -54,11 +54,11 @@
                                             @if($data->DataIncident != null)
                                             <tr>
                                                 <td>{{ $data->tanggal }}</td>
-                                                <td>{{ $data->DataIncident->maskapai }}</td>
                                                 <td>{{ $data->DataIncident->tipe_pesawat }}</td>
+                                                <td>{{ $data->DataIncident->maskapai }}</td>
                                                 <td>{{ $data->DataIncident->level_siaga }}</td>
                                                 <td> <a class="btn btn-info"
-                                                    href="{{ route('aircraft.show', $data->idlog) }}">Show</a>
+                                                    href="{{ route('pdf.accident', $data->idlog) }}">Show</a>
                                                 </td>
                                             </tr>
                                             @endif
